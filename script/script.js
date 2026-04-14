@@ -1,3 +1,4 @@
+let body = document.querySelector("body");
 let header = document.querySelector("header");
 let menuBar = document.querySelector("header nav ul");
 let toggle = document.querySelector("header nav .toggle");
@@ -7,7 +8,9 @@ window.addEventListener("scroll", () => {
   if (window.scrollY > 40) {
     header.classList.add("stickyNavBar");
   } else {
-    header.classList.remove("stickyNavBar");
+    if (!menuBar.classList.contains("menuBar")) {
+      header.classList.remove("stickyNavBar");
+    }
   }
 });
 
